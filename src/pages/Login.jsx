@@ -72,7 +72,7 @@ const Login = ({ onLogin }) => {
             </div>
           )}
           <h2 className="text-2xl font-black text-white tracking-widest uppercase">
-            Sistema <span className="text-[#F941A9]">Restringido</span>
+            Budget <span className="text-[#F941A9]">Manager</span>
           </h2>
           <p className="text-gray-500 text-sm mt-2">
             Ingrese credenciales de operador
