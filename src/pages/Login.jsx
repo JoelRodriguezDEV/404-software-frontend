@@ -48,8 +48,8 @@ const Login = ({ onLogin }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: "admin", password: "123" }),
     });
-    if (res.ok) alert("✅ Admin creado (Usuario: admin | Clave: 123)");
-    else alert("❌ El administrador ya existe o hubo un error.");
+    if (res.ok) alert("Admin creado (Usuario: admin | Clave: 123)");
+    else alert("El administrador ya existe o hubo un error.");
   };
 
   return (
@@ -63,8 +63,8 @@ const Login = ({ onLogin }) => {
           {logo404 ? (
             <img
               src={logo404}
-              alt="404 Logo"
-              className="h-16 mb-4 drop-shadow-[0_0_15px_rgba(0,229,255,0.5)]"
+              style={{ borderRadius: "9999px", objectFit: "cover" }} // 👈 Estilo forzado
+              className="h-16 mb-4 rounded-full drop-shadow-[0_0_15px_rgba(0,229,255,0.5)]"
             />
           ) : (
             <div className="w-16 h-16 bg-gray-800 rounded-xl mb-4 flex items-center justify-center">
@@ -95,7 +95,7 @@ const Login = ({ onLogin }) => {
               type="text"
               placeholder="USUARIO"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value.toLowerCase())} // 👈 Forzar minúsculas
               className="w-full bg-[#090910] border border-gray-700 text-white pl-10 pr-4 py-3 rounded-xl focus:border-[#00E5FF] focus:ring-1 focus:ring-[#00E5FF] outline-none transition-all uppercase"
               required
             />
